@@ -1,0 +1,32 @@
+<h1>レシピ一覧</h1>
+
+<% if @recipes.any? %>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>タイトル</th>
+        <th>所要時間</th>
+        <th>量</th>
+        <th>材料</th>
+        <th>費用</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= link_to recipe.id, recipe %></td>
+          <td><%= recipe.title %></td>
+          <td><%= recipe.making_time %></td>
+          <td><%= recipe.serves %></td>
+          <td><%= recipe.ingredients %></td>
+          <td><%= recipe.cost %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+ 
+<% end %>
+ 
+<%= link_to 'レシピの投稿', new_recipe_path, class: "btn btn-primary" %>

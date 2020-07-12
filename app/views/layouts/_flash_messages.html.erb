@@ -1,3 +1,3 @@
 <% flash.each do |recipe_type, recipe| %>
-  <div><%= recipe %></div>
+  <div class="alert alert-<%= recipe_type %>"><%= recipe %></div>
 <% end %>

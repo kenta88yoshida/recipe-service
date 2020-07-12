@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-6">
+
+    <%= form_with(model: @recipe, local: true) do |f| %>
+
+      <div class="form-group">
+      <%= f.label :title, 'タイトル' %>
+      <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.label :making_time, '所要時間' %>
+      <%= f.text_field :making_time, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.label :serves, '量（⚪︎人分）' %>
+      <%= f.text_field :serves, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.label :ingredients, '材料' %>
+      <%= f.text_field :ingredients, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.label :cost, '費用' %>
+      <%= f.text_field :cost, class: 'form-control' %>
+      </div>
+      <%= f.submit '投稿', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
